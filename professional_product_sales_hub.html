@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Discover featured products, useful resources and special offers.">
+<title>ProfitWave | Featured Products & Offers</title>
+<style>
+:root{
+  --bg:#f5f7fb;--card:#fff;--text:#111827;--muted:#667085;
+  --primary:#4f46e5;--primary2:#7c3aed;--accent:#16a34a;
+  --dark:#111827;--border:#e5e7eb;--soft:#eef2ff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+a{text-decoration:none}
+.wrap{max-width:1120px;margin:auto;padding:0 18px 55px}
+.hero{
+  margin:0 -18px;padding:58px 22px 50px;text-align:center;color:#fff;
+  background:linear-gradient(135deg,#312e81,#4f46e5 50%,#7c3aed);
+}
+.logo{font-size:15px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;opacity:.9}
+.badge{display:inline-block;margin:18px 0 12px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);padding:7px 13px;border-radius:999px;font-size:12px;font-weight:800}
+.hero h1{max-width:780px;margin:0 auto 14px;font-size:clamp(32px,6vw,54px);line-height:1.04;letter-spacing:-.035em}
+.hero p{max-width:650px;margin:0 auto;color:rgba(255,255,255,.88);font-size:17px;line-height:1.6}
+.hero-btn{display:inline-flex;margin-top:24px;background:#fff;color:#312e81;padding:14px 25px;border-radius:11px;font-weight:900;box-shadow:0 5px 15px rgba(0,0,0,.18)}
+.banner{margin:0 -18px;background:#111827;color:#fff;overflow:hidden;border-bottom:1px solid #263142}
+.banner-track{display:flex;width:max-content;animation:scroll 28s linear infinite}
+.banner-track:hover{animation-play-state:paused}
+.banner-item{display:inline-flex;align-items:center;gap:8px;padding:13px 18px;white-space:nowrap;color:#fff;font-size:13px;font-weight:800}
+.banner-item span{background:#4f46e5;padding:4px 8px;border-radius:5px;font-size:10px}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.section-head{text-align:center;padding:42px 0 20px}
+.section-head h2{font-size:30px;margin:0 0 8px}
+.section-head p{margin:0;color:var(--muted)}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:0 7px 24px rgba(16,24,40,.06);display:flex;flex-direction:column}
+.card-top{height:145px;background:linear-gradient(135deg,#eef2ff,#f5f3ff);display:flex;align-items:center;justify-content:center;font-size:62px}
+.card-body{padding:20px;display:flex;flex-direction:column;flex:1}
+.tag{align-self:flex-start;background:var(--soft);color:#4338ca;padding:5px 9px;border-radius:6px;font-size:10px;font-weight:900;text-transform:uppercase}
+.card h3{font-size:19px;margin:12px 0 8px}
+.card p{color:var(--muted);font-size:14px;line-height:1.55;margin:0 0 18px}
+.card-btn{margin-top:auto;display:flex;justify-content:center;background:var(--accent);color:#fff;padding:12px;border-radius:10px;font-weight:900}
+.url-panel{margin-top:36px;background:var(--card);border:1px solid var(--border);border-radius:18px;padding:24px;box-shadow:0 7px 24px rgba(16,24,40,.05)}
+.url-panel h2{margin:0 0 7px;font-size:21px}
+.url-panel p{color:var(--muted);font-size:14px;line-height:1.5}
+.form{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:10px;margin-top:16px}
+input{width:100%;padding:13px;border:1px solid var(--border);border-radius:10px;background:#fff;color:var(--text);font-size:14px}
+.form button{border:0;border-radius:10px;background:var(--primary);color:#fff;padding:0 18px;font-weight:900;cursor:pointer}
+.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px}
+.trust div{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px;text-align:center;font-size:13px;color:var(--muted)}
+.trust b{display:block;color:var(--text);margin-bottom:4px}
+footer{text-align:center;color:var(--muted);font-size:12px;line-height:1.6;margin-top:42px}
+@media(max-width:720px){
+  .form{grid-template-columns:1fr}
+  .form button{padding:13px}
+  .trust{grid-template-columns:1fr}
+  .hero{padding-top:45px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="logo">ProfitWave</div>
+  <div class="badge">🔥 Featured Products & Special Offers</div>
+  <h1>Discover Products, Tools & Resources Worth Checking Out</h1>
+  <p>Explore our featured offers and useful resources. Choose a product below to learn more or visit its official sales page.</p>
+  <a href="#products" class="hero-btn">Explore Products ↓</a>
+</header>
+
+<div class="banner" aria-label="Featured product advertising banner">
+  <div class="banner-track" id="banner-track"></div>
+</div>
+
+<section id="products">
+  <div class="section-head">
+    <h2>Featured Products</h2>
+    <p>Tap any offer to visit its product or sales page.</p>
+  </div>
+  <div class="products" id="products-grid"></div>
+</section>
+
+<section class="url-panel">
+  <h2>🔗 Add Your Product / Sales Links</h2>
+  <p>Add a product name, sales URL and category. The new offer will appear on this page and in the advertising banner.</p>
+  <form class="form" onsubmit="event.preventDefault();addProduct()">
+    <input id="title" placeholder="Product name" required>
+    <input id="url" placeholder="https://your-sales-link.com" required>
+    <input id="tag" placeholder="Category e.g. BOOK" required>
+    <button type="submit">Add Product</button>
+  </form>
+</section>
+
+<div class="trust">
+  <div><b>📱 Mobile Friendly</b>Designed to look clean on phones and tablets.</div>
+  <div><b>🚀 Direct Sales Links</b>Visitors can go directly to your chosen offer.</div>
+  <div><b>📢 Advertising Banner</b>Your links rotate continuously across the page.</div>
+</div>
+
+<footer>
+  Some links may be affiliate links. If you purchase through a qualifying link, I may earn a commission at no extra cost to you.
+</footer>
+</div>
+
+<script>
+const defaultProducts = [
+  {title:"Your Main Product",url:"",tag:"FEATURED",icon:"⭐",description:"Add your main product description and sales link here."},
+  {title:"Your Second Product",url:"",tag:"NEW",icon:"📘",description:"Add another product, book, service or affiliate offer."},
+  {title:"Your Third Product",url:"",tag:"OFFER",icon:"🚀",description:"Promote another useful product or special offer."}
+];
+
+let products = JSON.parse(localStorage.getItem("profitwaveProducts") || "null") || defaultProducts;
+
+function validUrl(url){
+  try{
+    const u = new URL(url);
+    return u.protocol === "http:" || u.protocol === "https:";
+  }catch(e){return false}
+}
+
+function safe(text){
+  const d=document.createElement("div");
+  d.textContent=text ?? "";
+  return d.innerHTML;
+}
+
+function render(){
+  const grid=document.getElementById("products-grid");
+  grid.innerHTML=products.map((p,i)=>{
+    const href=validUrl(p.url) ? p.url : "#";
+    return `
+      <article class="card">
+        <div class="card-top">${safe(p.icon || "⭐")}</div>
+        <div class="card-body">
+          <span class="tag">${safe(p.tag)}</span>
+          <h3>${safe(p.title)}</h3>
+          <p>${safe(p.description || "Explore this featured offer and learn more on the sales page.")}</p>
+          <a class="card-btn" href="${safe(href)}" ${href!="#"?'target="_blank" rel="noopener noreferrer"':''}>
+            View Product →
+          </a>
+        </div>
+      </article>`;
+  }).join("");
+  renderBanner();
+}
+
+function renderBanner(){
+  const track=document.getElementById("banner-track");
+  const active=products.filter(p=>validUrl(p.url));
+  if(!active.length){
+    track.innerHTML='<div class="banner-item">📢 Add your sales links below to activate your advertising banner</div>';
+    return;
+  }
+  const items=active.map(p=>`
+    <a class="banner-item" href="${safe(p.url)}" target="_blank" rel="noopener noreferrer">
+      <span>${safe(p.tag)}</span> ${safe(p.title)} — View Offer →
+    </a>`).join("");
+  track.innerHTML=items+items;
+}
+
+function addProduct(){
+  const title=document.getElementById("title").value.trim();
+  const url=document.getElementById("url").value.trim();
+  const tag=document.getElementById("tag").value.trim();
+
+  if(!validUrl(url)){
+    alert("Please enter a valid sales URL beginning with https://");
+    return;
+  }
+
+  products.push({
+    title:title,url:url,tag:tag.toUpperCase(),icon:"🔥",
+    description:"Featured product or offer. Tap below to visit the sales page."
+  });
+
+  localStorage.setItem("profitwaveProducts",JSON.stringify(products));
+  document.querySelector(".form").reset();
+  render();
+  document.getElementById("products").scrollIntoView({behavior:"smooth"});
+}
+
+render();
+</script>
+</body>
+</html>
